@@ -1,0 +1,393 @@
+/**
+ * App.css - Main Application Styles
+ * 
+ * This file contains styles for all components and pages.
+ * Organized by component/section for easy navigation.
+ */
+
+/* ===================
+   LAYOUT
+   =================== */
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+/* ===================
+   NAVBAR
+   =================== */
+
+.navbar {
+    background-color: #2e7d32;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-links a {
+    color: white;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===================
+   PAGE HEADER
+   =================== */
+
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.page-header h1 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* ===================
+   PRODUCE GRID & CARDS
+   =================== */
+
+.produce-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.produce-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.produce-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.produce-card-title {
+    color: #2e7d32;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e8f5e9;
+}
+
+.produce-card-details p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.produce-card-details .label {
+    color: #666;
+}
+
+.produce-card-details .value {
+    margin-left: 5px;
+    color: #333;
+    font-weight: 500;
+}
+
+.produce-card-footer {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/* ===================
+   FORMS
+   =================== */
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.add-produce-form {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2e7d32;
+}
+
+.form-group input:disabled {
+    background-color: #f5f5f5;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background-color: #1b5e20;
+}
+
+.submit-btn:disabled {
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+}
+
+/* ===================
+   MESSAGES
+   =================== */
+
+.message {
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.message.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.message.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* ===================
+   LOADING
+   =================== */
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* ===================
+   NO DATA STATES
+   =================== */
+
+.no-produce,
+.no-prices {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 8px;
+    color: #666;
+}
+
+.no-produce p,
+.no-prices p {
+    margin: 10px 0;
+}
+
+/* ===================
+   PRICES TABLE
+   =================== */
+
+.table-container {
+    overflow-x: auto;
+}
+
+.prices-table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prices-table th,
+.prices-table td {
+    padding: 15px 20px;
+    text-align: left;
+}
+
+.prices-table th {
+    background-color: #2e7d32;
+    color: white;
+    font-weight: 500;
+}
+
+.prices-table tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.prices-table tr:hover {
+    background-color: #e8f5e9;
+}
+
+.price-cell {
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+/* ===================
+   TIPS & INSTRUCTIONS
+   =================== */
+
+.tips-section,
+.instructions {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff8e1;
+    border-radius: 8px;
+    border-left: 4px solid #ffc107;
+}
+
+.tips-section h3,
+.instructions h3 {
+    color: #f57f17;
+    margin-bottom: 15px;
+}
+
+.tips-section ul,
+.instructions ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.tips-section li,
+.instructions li {
+    margin-bottom: 8px;
+    color: #666;
+}
+
+/* ===================
+   DISCLAIMER
+   =================== */
+
+.disclaimer {
+    margin-top: 30px;
+    padding: 15px 20px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* ===================
+   FOOTER
+   =================== */
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* ===================
+   RESPONSIVE DESIGN
+   =================== */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .produce-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .prices-table th,
+    .prices-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

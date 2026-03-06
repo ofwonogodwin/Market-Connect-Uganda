@@ -72,7 +72,7 @@ const seedMarketPrices = () => {
             console.error('Error checking market_prices:', err.message);
             return;
         }
-        
+
         // Only seed if table is empty
         if (row.count === 0) {
             const samplePrices = [
@@ -95,13 +95,13 @@ const seedMarketPrices = () => {
             ];
 
             const stmt = db.prepare('INSERT INTO market_prices (crop_name, town, average_price) VALUES (?, ?, ?)');
-            
+
             samplePrices.forEach(price => {
                 stmt.run(price, (err) => {
                     if (err) console.error('Error seeding price:', err.message);
                 });
             });
-            
+
             stmt.finalize();
             console.log('Sample market prices added');
         }
